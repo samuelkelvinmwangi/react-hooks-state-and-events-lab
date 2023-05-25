@@ -6,7 +6,7 @@ function ShoppingList({ items }) {
 
 
 //function for usestate to select category
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   function handleCategoryChange(event) {
     setSelectedCategory(event.target.value);
