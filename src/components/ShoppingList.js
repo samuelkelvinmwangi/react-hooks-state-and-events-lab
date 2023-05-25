@@ -4,7 +4,7 @@ import Item from "./Item";
 
 function ShoppingList({ items }) {
 
-  
+
 //function for usestate to select category
   const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -12,11 +12,15 @@ function ShoppingList({ items }) {
     setSelectedCategory(event.target.value);
   }
 
-  const filteredItems = selectedCategory
-    ? items.filter(function (item) {
-        return item.category === selectedCategory;
+  const filteredItems = 
+     items.filter(function (item) {
+      if (selectedCategory==='All') {
+        return true;
+      }
+      else{
+        return item.category === selectedCategory;}
       })
-    : items;
+    
 
 
 //adding the event onChange
