@@ -7,12 +7,12 @@ function Item({ name, category }) {
   function handleButtonClick() {
     setIsInCart(!isInCart);
   }
-
+ 
   return (
     <li className={isInCart ? 'in-cart' : ''}>
       <span>{name}</span>
       <span className="category">{category}</span>
-      <button className="add" onClick={handleButtonClick}>
+      <button className={isInCart ? 'remove' : 'add'} onClick={handleButtonClick}>
         {isInCart ? 'Remove From Cart' : 'Add to Cart'}
       </button>
     </li>
